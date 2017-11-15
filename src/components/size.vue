@@ -104,6 +104,8 @@
 </template>
 <script>
 	import axios from 'axios'
+    import Mock from 'mockjs'
+    import mockData from '../mock/size'
     import {
         XHeader,
         Card,
@@ -209,6 +211,7 @@
                     text: '加载初始化数据失败'
                 })
             });
+            Mock.mock('../phone/userSize/queryAllData.json?userCode='+ this.userCode, mockData.queryAllData)
 
             //加载省的数据
             axios.get('../phone/userSize/loadArea.json',{
@@ -238,6 +241,7 @@
                     text: '加载初始化数据失败'
                 })
             });
+            Mock.mock('../phone/userSize/queryuserSize.json?userCode='+ this.userCode, mockData.queryuserSize)
             //加载用户的地址信息
             axios.get('../phone/userSize/loadUserAddress.json',{
                 params:{
@@ -269,7 +273,8 @@
                     text: '加载初始化数据失败'
                 })
             });
-            
+            Mock.mock('../phone/userSize/loadUserAddress.json?userCode='+ this.userCode, mockData.loadUserAddress)
+
         },
         mounted() {
            
@@ -310,7 +315,9 @@
                     			text: '尺码数据加载失败'
                 			});
 			            });
-		        		this.popup = true
+                        Mock.mock('../phone/userSize/queryMatCode.json?matId='+ this.STD_MAT_ID, mockData.queryMatCode)
+
+                        this.popup = true
 		        		oldSize=list.NATIONAL_SIZE;
 	    				oldSpecial=list.SPECIAL_REQ;
 		            	this.currentList = list

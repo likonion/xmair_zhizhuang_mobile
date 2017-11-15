@@ -252,16 +252,17 @@
                     text: '加载我的购买记录出错'
                 })
             });
-            Mock.mock('../phone/pay/loadUserMat.json' + this.userCode + '&year=' + this.queryYear + '&page=1', mockData.loadUserMat)
+            Mock.mock('../phone/pay/loadUserMat.json?userCode=' + this.userCode + '&page=1'+ '&year=' + this.queryYear , mockData.loadUserMat)
             //加载查询时的时间列表框
             axios.get('../phone/receive/createYear.json', {timeout: 20000}).then(function (data) {
-                obj.issueList = data.data;
+                obj.issueList = data.data.yearList;
             }).catch((err) => {
                 obj.$vux.toast.show({
                     type: 'warn',
                     text: '时间列表加载失败'
                 })
             });
+            Mock.mock('../phone/receive/createYear.json' , mockData.createYear)
             this.loadUserMat();
         },
         mounted() {
@@ -335,6 +336,7 @@
                         text: '加载允许购买物资列表出错了'
                     })
                 });
+                Mock.mock('../phone/pay/newLoadAllowUserMater.json?userCode=' + obj.userCode , mockData.newLoadAllowUserMater)
             },
             closeSize(){//关闭尺码选择界面
                 this.payAdd=false;
@@ -501,6 +503,7 @@
                         text: '查询失败'
                     })
                 });
+                Mock.mock('../phone/pay/loadUserMat.json?userCode=' + this.userCode + '&page=1'+ '&year=' + this.queryYear , mockData.loadUserMat)
             },
             morePay() {//加载更多数据
                 var obj = this;
@@ -528,6 +531,7 @@
                         text: '查询失败'
                     })
                 });
+                Mock.mock('../phone/pay/loadUserMat.json?userCode=' + this.userCode + '&page='+ this.payCurrentNo + '&year=' + this.queryYear , mockData.loadUserMat)
             }
         }
     }

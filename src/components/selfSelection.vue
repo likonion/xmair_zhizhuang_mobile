@@ -210,6 +210,8 @@
 </template>
 <script>
     import axios from 'axios'
+    import Mock from 'mockjs'
+    import mockData from '../mock/selfSelection'
     import {
         XHeader,
         Card,
@@ -349,6 +351,7 @@
                         text: '初始化个性自选数据失败'
                     })
                 });
+                Mock.mock('../phone/selected/queryInit.json?userCode=' + this.userCode, mockData.queryInit)
             },
             //加载用户能购买的物资列表
             loadUserMat() {
@@ -367,6 +370,7 @@
                         text: '加载允许您自选物资信息出错了'
                     })
                 });
+                Mock.mock('../phone/selected/newSelectMater.json?userCode=' + this.userCode, mockData.newSelectMater)
             },
             //加载用户基础配发的数据
             loadBaseMaterList() {
@@ -386,6 +390,7 @@
                         text: '加载您的基础配发信息时出错了'
                     })
                 });
+                Mock.mock('../phone/selected/newLoadBaseList.json?userCode=' + this.userCode, mockData.newLoadBaseList)
 
             },
             //加载用户自选的数据
@@ -405,6 +410,7 @@
                         text: '加载您的自选信息时出错了'
                     })
                 });
+                Mock.mock('../phone/selected/newLoadSelectList.json?userCode=' + this.userCode, mockData.newLoadSelectList)
             },
             loadTotalMoney() {//加载相关的金额数据
                 var obj = this;
@@ -426,6 +432,7 @@
                         text: '加载您的费用信息时出错了'
                     })
                 });
+                Mock.mock('../phone/selected/queryLimit.json?userCode=' + this.userCode, mockData.queryLimit)
             },
 
             openModify() {
@@ -492,6 +499,7 @@
                                     text: '保存失败，请重试'
                                 })
                             });
+                            Mock.mock('../phone/selected/modifyUserSelf.json?id=' + this.currentRowSelf.choiceMaterId+'&num'+ this.currentRowSelf.matNum+'&userCode'+ this.userCode, mockData.modifyUserSelf)
 
                         }
                     })
@@ -542,7 +550,9 @@
                                 text: '删除失败，请重试'
                             })
                         });
+                        Mock.mock('../phone/selected/deleteUserSelf.json?id=' + this.currentRowSelf.choiceMaterId+'&userCode'+ this.userCode, mockData.deleteUserSelf)
                     }
+
                 })
             },
             closeSelfDetail() {//关闭购买详情界面

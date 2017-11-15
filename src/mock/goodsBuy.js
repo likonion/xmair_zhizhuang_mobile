@@ -1,11 +1,7 @@
 import Mock from "mockjs"
 
 export default Mock.mock({
-    "createYearForPlan": {
-        "yearList": ["2012", "2013", "2014", "2015", "2016", "2017"],
-        "defa": "2017"
-    },
-    "createYearForHistory": {
+    "createYear": {
         "yearList": ["2012", "2013", "2014", "2015", "2016", "2017"],
         "defa": "2017"
     },
@@ -18,75 +14,59 @@ export default Mock.mock({
                 "CUSTOM_FLAG": "无尺码",
                 "MEASURE_SIZE": null,
                 "PLAN_YEAR": "2017",
-                "NATIONAL_SIZE": null,
+                "NATIONAL_SIZE|30-100": 1,
                 "STAFF_CODE": "20211",
                 "PAY_TIME": "",
-                "MAT_NAME": "肥皂",
+                "MAT_NAME|1": ["男行政春秋上衣", "领带", "男长袖衬衣", "连体雨衣", "男夏制衣", "男行政春秋制裤", "乘务裙（浅蓝）"],
                 "MAT_NORMAL": "否",
                 "MAT_ID": "2",
                 "MEMO": null,
                 "APP_STATUS_NAME": "库存不足",
                 "PLAN_PRICE": "4",
-                "APP_STATUS": "5",
+                "APP_STATUS|1-5": 1,
                 "PLAN_STATE": null,
                 "MEASURE_UNIT": "块",
                 "PURCHASE_ID": "85050",
-                "NUM": "1",
-                "ADD_DATE_SIMP": "2017-10-25"
+                "NUM|1-8": 1,
+                "ADD_DATE_SIMP": "@date"
             }
         ]
     },
-    "receiveStand": {
-        "data|10": [{
-            "PLAN_PRICE|1-200.1": 1,
-            "STD_FIRST_NUM|1-6": 1,
-            "STD_BASE_NUM|1-6": 1,
-            "MEASURE_UNIT": "条",
-            "MAT_NAME|1": ["男行政春秋上衣", "领带", "男长袖衬衣", "连体雨衣", "男夏制衣", "男行政春秋制裤", "乘务裙（浅蓝）"],
-            "STD_BASE_YEAR|1-6": 1
-        }],
-        "standName": "男地面行政标准"
-    },
-    "plan": {
-        "result|30": [
-            {
-                "MEMO|1": ["基础配发", "自选"],
-                "PLAN_STATE|1": [0, 1, 2, 3],
-                "MAT_NUM|1-5": 1,
-                "PLAN_YEAR": "2018",
-                "NATIONAL_SIZE|29-40": 1,
-                "MAT_NAME|1": ["男行政春秋上衣", "领带", "男长袖衬衣", "连体雨衣", "男夏制衣", "男行政春秋制裤", "乘务裙（浅蓝）"]
-            }
-        ],
-        "start": 0,
-        "totalCount": 16,
-        "pageSize": 20,
-        "totalPageCount": 5,
-        "currentPageNo": 1,
-        "hasNextPage": false,
-        "hasPreviousPage": false,
-        "pageNo": 1
-    },
-    "receiveHistory": {
-        "result|30": [
-            {
-                "MEMO": "基础配发",
-                "ADD_DATE": "2017-10-30",
-                "MAT_NUM|1-5": 1,
-                "PLAN_YEAR": null,
-                "NATIONAL_SIZE": "XL",
-                "DRAWER": "@cname",
-                "MAT_NAME|1": ["男行政春秋上衣", "领带", "男长袖衬衣", "连体雨衣", "男夏制衣", "男行政春秋制裤", "乘务裙（浅蓝）"]
-            }
-        ],
-        "start": 0,
-        "totalCount": 100,
-        "pageSize": 20,
-        "totalPageCount": 5,
-        "currentPageNo": 1,
-        "hasNextPage": true,
-        "hasPreviousPage": false,
-        "pageNo": 1
-    }
+    "newLoadAllowUserMater|10": [{
+        "PLAN_PRICE|10-100.1": 1,
+        "MAT_IMG": "../static/phone/1.png",
+        "MAT_SIZE": ["68",
+            "70",
+            "72",
+            "74",
+            "76",
+            "78",
+            "80",
+            "82",
+            "84",
+            "86",
+            "88",
+            "90",
+            "92",
+            "94",
+            "96",
+            "98",
+            "100",
+            "102",
+            "104",
+            "106",
+            "108",
+            "110",
+            "112",
+            "114",
+            "116"],
+        "CUSTOM_FLAG|1": ["无尺码", "国标码"],
+        "USER_SIZE": "",
+        "NORMAL|1": [0,1],
+        "MEASURE_UNIT": "条",
+        "MAT_NAME|1": ["男行政春秋上衣", "领带", "男长袖衬衣", "连体雨衣", "男夏制衣", "男行政春秋制裤", "乘务裙（浅蓝）"],
+        "USER_NUM": 0,
+        "MAT_ID": "15"
+    }]
 
 })
