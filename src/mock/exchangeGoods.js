@@ -1,0 +1,87 @@
+import Mock from "mockjs"
+
+export default Mock.mock({
+    "querymc": {
+        "start": 0,
+        "totalCount": 32,
+        "pageSize": 10,
+        "totalPageCount": 4,
+        "currentPageNo": 1,
+        "hasNextPage": true,
+        "hasPreviousPage": false,
+        "pageNo": 1,
+        "result|10": [
+            {
+                "HB": "1 条",
+                "CHANGE_FLAG": "正常",
+                "ADDRESS|1": ["厦航本部",
+                    "厦门航空有限公司",
+                    "福州分公司",
+                    "南昌分公司",
+                    "杭州分公司",
+                    "天津分公司",
+                    "北京运行基地",
+                    "北京分公司",
+                    "湖南分公司",
+                    "泉州运行基地",
+                    "河北航空",
+                    "厦航国际旅行社",
+                    "厦航文化传媒公司",
+                    "厦门新科技"],
+                "HA": "74码 换 72码",
+                "MAT_NUM": "1",
+                "NATIONAL_SIZE": "74",
+                "STAFF_CODE": "20211",
+                "MAT_NAME|1": ["男行政春秋上衣", "领带", "男长袖衬衣", "连体雨衣", "男夏制衣", "男行政春秋制裤", "乘务裙（浅蓝）"],
+                "PHONE": "13459254816",
+                "CHANGE_ID": "402882235fbdad85015fbdb18f670007",
+                "STAFF_NAME": "系统测试",
+                "MAT_IMG": "../static/phone/1.png",
+                "CHANGE_SIZE": "72",
+                "APP_CHANGE_DATE": "2017-11-15 11:20:51"
+            },
+        ]
+    },
+    "queryAll": {
+        "start": 0,
+        "totalCount": 32,
+        "pageSize": 10,
+        "totalPageCount": 4,
+        "currentPageNo": 1,
+        "hasNextPage": true,
+        "hasPreviousPage": false,
+        "pageNo": 1,
+        "result|10": [
+            {
+                "HB": "1 条",
+                "CHANGE_FLAG": "正常",
+                "ADDRESS|1": ["厦航本部",
+                    "厦门航空有限公司",
+                    "福州分公司",
+                    "南昌分公司",
+                    "杭州分公司",
+                    "天津分公司",
+                    "北京运行基地",
+                    "北京分公司",
+                    "湖南分公司",
+                    "泉州运行基地",
+                    "河北航空",
+                    "厦航国际旅行社",
+                    "厦航文化传媒公司",
+                    "厦门新科技"],
+                "HA": "74码 换 72码",
+                "MAT_NUM": "1",
+                "NATIONAL_SIZE": "74",
+                "STAFF_CODE": "20211",
+                "MAT_NAME|1": ["男行政春秋上衣", "领带", "男长袖衬衣", "连体雨衣", "男夏制衣", "男行政春秋制裤", "乘务裙（浅蓝）"],
+                "PHONE": "13459254816",
+                "CHANGE_ID": "402882235fbdad85015fbdb18f670007",
+                "STAFF_NAME": "系统测试",
+                "MAT_IMG": "../static/phone/1.png",
+                "CHANGE_SIZE": "72",
+                "APP_CHANGE_DATE": "2017-11-15 11:20:51"
+            },
+        ]
+    }
+
+})

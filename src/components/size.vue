@@ -84,14 +84,10 @@
                     <cell v-if="addressAllowFlag==2" value-align="right" title="联系电话" style="font-size:.7rem">{{userTel}}</cell>
                     <x-input  v-if="addressAllowFlag==1"  text-align="right" type="text"   title="备用电话" placeholder="请输入备用电话" v-model="userTelBack" style="font-size:.7rem"></x-input>
                     <cell v-if="addressAllowFlag==2" value-align="right" title="备用电话" style="font-size:.7rem">{{userTelBack}}</cell>
-                    <selector  v-if="addressAllowFlag==1" direction="rtl"title="所属省份" placeholder="请选择所属省份" v-model="userProv" :options="selectProv" @on-change="changeProv" style="font-size:.7rem"></selector>
-                    <cell v-if="addressAllowFlag==2" value-align="right" title="所属省份" style="font-size:.7rem">{{userProv}}</cell>
+                    <selector  v-if="addressAllowFlag==1" direction="rtl" title="所属省份" placeholder="请选择所属省份" v-model="userProv" :options="selectProv" @on-change="changeProv" style="font-size:.7rem"></selector>
                     <selector   v-if="addressAllowFlag==1"  direction="rtl" title="所属城市" placeholder="请选择所属城市" v-model="userCity" :options="selectCity" @on-change="changeCity" style="font-size:.7rem"></selector>
-                    <cell v-if="addressAllowFlag==2" value-align="right" title="所属城市" style="font-size:.7rem">{{userCity}}</cell>
                     <selector   v-if="addressAllowFlag==1"  direction="rtl" title="所属区县" placeholder="请选择所属区县" v-model="userCounty" :options="selectCounty" style="font-size:.7rem"></selector>
-                    <cell v-if="addressAllowFlag==2" value-align="right" title="所属区县" style="font-size:.7rem">{{userCounty}}</cell>
-                    <x-input   v-if="addressAllowFlag==1"type="text"  text-align="right"  title="详细地址" placeholder="无需包含省市县信息" v-model="userDetail" style="font-size:.7rem"></x-input>
-                    <cell v-if="addressAllowFlag==2" title="详细地址" style="font-size:.7rem">{{userDetail}}</cell>
+                    <x-input   v-if="addressAllowFlag==1" type="text"  text-align="right"  title="详细地址" placeholder="无需包含省市县信息" v-model="userDetail" style="font-size:.7rem"></x-input>
                 </group>
                 <div style="padding:20px 15px;"  v-show="addressAllowFlag==1" >
                     <x-button type="primary" @click.native="submitapply">保存</x-button>
@@ -227,7 +223,7 @@
                     text: '加载收货地址省份信息失败'
                 })
             });
-
+            Mock.mock('../phone/userSize/loadArea.json?code=&level=0', mockData.loadArea.selectProv)
             //加载用户的尺码列表
             axios.get('../phone/userSize/queryuserSize.json',{
                 params: {
@@ -400,6 +396,7 @@
                         text: '加载收货地址城市信息失败'
                     })
                 });
+                Mock.mock('../phone/userSize/loadArea.json?code='+ this.userProv + '&level=1', mockData.loadArea.selectCity)
             },
             changeCity(){//切换
                 var obj=this;
@@ -417,6 +414,8 @@
                         text: '加载收货地址区县信息失败'
                     })
                 });
+                Mock.mock('../phone/userSize/loadArea.json?code='+ obj.userCity + '&level=2', mockData.loadArea.selectCounty)
+
             },
             closeadd(){//取消修改
                 var obj=this;

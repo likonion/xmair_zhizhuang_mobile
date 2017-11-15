@@ -22,7 +22,7 @@
             <div>
                 <div style="background-color:#fff;margin:0 auto;border-radius:5px;">
                     <group title="请输入您的宝贵意见及建议">
-                        <x-textarea title="" v-model="myIdea" :max=200 placeholder="我们将为您不断改进！不少于4个字哦~ "></x-textarea>
+                        <x-textarea title="" v-model="myIdea" :max=200 placeholder="我们将为您不断改进！不少于4个字哦~ " style="font-size: .2rem"></x-textarea>
                     </group>
                     <div style="padding:20px 15px;">
                         <x-button type="primary" @click.native="submitIdea">发表</x-button>
@@ -52,6 +52,8 @@
 </template>
 <script>
     import axios from 'axios'
+    import Mock from 'mockjs'
+    import mockData from '../mock/idea'
     import {
         XHeader,
         Card,
@@ -227,6 +229,8 @@
                         text: '加载我的意见建议时出错了'
                     })
                 });
+                Mock.mock('../phone/other/loadUserIdea.json?userCode='+ this.userCode + '&page=1', mockData.loadUserIdea)
+
             },
             moreIdea(){//加载更多数据
                 var obj=this;

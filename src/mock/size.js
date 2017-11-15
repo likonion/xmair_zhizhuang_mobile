@@ -4,8 +4,15 @@ export default Mock.mock({
     "queryAllData": {
         "allowDate": "@date-@date",
         "allowFlag|2-3": 1,
+        "addressAllowFlag": 1,
+        "addressAllowDate": "@date-@date",
         "allowTitle": "2017",
         "allowYear": 23
+    },
+    "loadArea": {
+        "selectProv": [1,2,3],
+        "selectCity":[4,5,6],
+        "selectCounty": [7,8,9]
     },
     "queryuserSize|10": [
         {

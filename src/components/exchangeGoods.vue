@@ -110,7 +110,7 @@
             <div class="page-content" style="padding-bottom: 20px; ">
                 <div v-show="tabIndex === 1">
                     <group>
-                        <cell title="" style="font-size: .7rem">
+                        <cell title="快捷菜单" style="font-size: .7rem">
                             <x-button mini type="primary" @click.native="applyChangePopup">我要对换</x-button>
                             <x-button mini type="default" @click.native="showMySeach" style="padding:0 1.31em;margin-top:0">
                                 <x-icon type="ios-search-strong" size="18" style="fill:#00000; vertical-align: middle; margin-top: -4px;"></x-icon>
@@ -148,7 +148,7 @@
                 <!--换货信息发布栏的数据-->
                 <div v-show="tabIndex === 0">
                     <group>
-                        <cell  title="" style="font-size: .7rem">
+                        <cell  title="快捷菜单" style="font-size: .7rem">
                             <x-button mini type="default" @click.native="showAllSearch" style="padding:0 1.31em;margin-top:0">
                                 <x-icon type="ios-search-strong" size="18" style="fill:#00000; vertical-align: middle; margin-top: -4px;"></x-icon>
                             </x-button>
@@ -189,6 +189,8 @@
 </template>
 <script>
 	import axios from 'axios'
+    import Mock from 'mockjs'
+    import mockData from '../mock/exchangeGoods'
     import {
         Loading,
         XHeader,
@@ -311,6 +313,8 @@
                     text: '加载我的换货记录失败'
                 })
             });
+            Mock.mock('../phone/changeAndAfter/querymc.json?userCode='+ this.userCode + '&page=1&status=&matName=&d1=&d2=', mockData.querymc)
+
             //查询全部的换货记录
             axios.get('../phone/changeAndAfter/queryAll.json',
             	{params:{
@@ -331,16 +335,18 @@
                     text: '加载换货信息发布栏数据失败'
                 })
             });
-            
+            Mock.mock('../phone/changeAndAfter/queryAll.json?userCode=&page=1&matName=&d1=&d2=&size=&address=', mockData.queryAll)
+
+
             //加载查询全部时的所在地区
             axios.get('../phone/changeAndAfter/queryAllCompany.json',
             	{timeout:20000}).then(function (data) {
                 obj.addressList = data.data;
             }).catch((err) => {
-                obj.$vux.toast.show({
-                    type: 'warn',
-                    text: '加载所在地区失败'
-                })
+//                obj.$vux.toast.show({
+//                    type: 'warn',
+//                    text: '加载所在地区失败'
+//                })
             });
             //加载用户提交换货申请时需要的基础数据
             axios.get('../phone/changeAndAfter/queryAddInit.json',
@@ -349,10 +355,10 @@
                		obj.addPhone=data.data.phone;
                 	obj.addAddress=data.data.unit;
             }).catch((err) => {
-                obj.$vux.toast.show({
-                    type: 'warn',
-                    text: '加载初始化数据失败'
-                })
+//                obj.$vux.toast.show({
+//                    type: 'warn',
+//                    text: '加载初始化数据失败'
+//                })
             });
         },
         mounted() {

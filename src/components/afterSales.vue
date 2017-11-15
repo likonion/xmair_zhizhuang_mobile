@@ -137,7 +137,7 @@
             	<!--待收货列表显示界面-->
                 <div v-show="tabIndex === 0">
                     <group>
-                        <cell title="" style="font-size: .7rem">
+                        <cell title="快捷菜单" style="font-size: .7rem">
                             <x-button mini type="default" @click.native="openwaitsearch" style="padding:0 1.31em;margin-top:0">
                                 <x-icon type="ios-search-strong" size="18" style="fill:#00000; vertical-align: middle; margin-top: -4px;"></x-icon>
                             </x-button>
@@ -150,7 +150,7 @@
                 <!--已收货列表显示界面-->
                 <div v-show="tabIndex === 1">
                     <group>
-                        <cell title="" style="font-size: .7rem">
+                        <cell title="快捷菜单" style="font-size: .7rem">
                             <x-button mini type="default" @click.native="openreadysearch()" style="padding:0 1.31em;margin-top:0">
                                 <x-icon type="ios-search-strong" size="18" style="fill:#00000; vertical-align: middle; margin-top: -4px;"></x-icon>
                             </x-button>
@@ -163,7 +163,7 @@
                 <!--售后申请显示界面-->
                 <div v-show="tabIndex === 2">
                     <group>
-                        <cell title="" style="font-size: .7rem">
+                        <cell title="快捷菜单" style="font-size: .7rem">
                             <x-button mini type="default" @click.native="openaftersearch()" style="padding:0 1.31em;margin-top:0">
                                 <x-icon type="ios-search-strong" size="18" style="fill:#00000; vertical-align: middle; margin-top: -4px;"></x-icon>
                             </x-button>
@@ -179,7 +179,8 @@
 
 <script>
     import axios from 'axios'
-
+    import Mock from 'mockjs'
+    import mockData from '../mock/afterSales'
     import {
         Loading,
         XHeader,
@@ -290,8 +291,8 @@
                 obj.issueList = data.data;
             }).catch((err) => {
                 obj.$vux.toast.show({
-                    type: 'warn',
-                    text: '时间列表加载失败'
+//                    type: 'warn',
+//                    text: '时间列表加载失败'
                 })
             });
             //加载首页的待收货数据
@@ -312,6 +313,7 @@
                     text: '加载待收货数据失败'
                 })
             });
+            Mock.mock('../phone/changeAndAfter/queryWaitExpress.json?userCode='+ this.userCode + '&page=1&matName='+this.qwmatname+'&express='+this.qwexpress+'&year='+this.qryear, mockData.queryReadyExpress)
             //加载首页的已收货数据
             axios.get('../phone/changeAndAfter/queryReadyExpress.json',
                 {params:{
@@ -332,6 +334,8 @@
                     text: '加载已收货数据失败'
                 })
             });
+            Mock.mock('../phone/changeAndAfter/queryReadyExpress.json?userCode='+ this.userCode + '&page=1&matName='+this.qrmatname+'&express='+this.qrexpress+'&d1='+this.qrd1+'&d2='+this.qrd2+'&year='+this.qryear, mockData.queryReadyExpress)
+
             //加载首页的售后数据
             axios.get('../phone/changeAndAfter/queryAfter.json',
                 {params:{
@@ -352,6 +356,7 @@
                     text: '加载申请售后数据失败'
                 })
             });
+            Mock.mock('../phone/changeAndAfter/queryAfter.json?userCode='+ this.userCode + '&page=1&matName='+this.qrmatname+'&express='+this.qrexpress+'&d1='+this.qrd1+'&d2='+this.qrd2+'&status='+this.qastatus, mockData.queryAfter)
         },
         mounted() {
             this.$nextTick(function () { })

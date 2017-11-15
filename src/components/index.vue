@@ -48,13 +48,7 @@
                   	尺码互换
                 </span>
             </grid-item>
-            <!--<grid-item link="/afterSales">
-                  <span slot="label">
-                  <div><x-icon type="flag" size="35" style="fill:#ffbe00"></x-icon></div>
-                 	 快递签收
-                </span>
-            </grid-item>-->
-           <grid-item link="/sorry">
+           <grid-item link="/afterSales">
                   <span slot="label">
                   <div><x-icon type="flag" size="35" style="fill:#ffbe00"></x-icon></div>
                  	 快递签收

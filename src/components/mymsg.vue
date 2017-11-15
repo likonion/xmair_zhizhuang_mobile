@@ -39,7 +39,7 @@
         <div>
             <div>
                 <group>
-                    <cell title="" style="font-size: .7rem">
+                    <cell title="快捷菜单" style="font-size: .7rem">
                         <x-button mini type="default" @click.native="openCon" style="padding:0 1.31em;margin-top:0">
                             <x-icon type="ios-search-strong" size="18" style="fill:#00000; vertical-align: middle; margin-top: -4px;"></x-icon>
                         </x-button>
@@ -69,6 +69,8 @@
 </template>
 <script>
     import axios from 'axios'
+    import Mock from 'mockjs'
+    import mockData from '../mock/mymsg'
     import {
         XHeader,
         Card,
@@ -206,6 +208,8 @@
                         text: '加载消息通知列表失败'
                     })
                 });
+                Mock.mock('../phone/other/loadMyMsg.json?userCode='+ this.userCode + '&d1='+ this.myd1 + '&d2='+this.myd2+'&page=1', mockData.loadMyMsg)
+
             },
             moreMsg(){//加载更多数据
                 var obj=this;
