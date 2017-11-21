@@ -424,7 +424,6 @@
                     obj.backMoney = data.data;//备份金额数据，数量发生变化，直接用备份的数据来更新
                     obj.backYue=data.data.curSurplusMoney;//备份余额
                     obj.backWaitY=data.data.needPayMoney;//备份代缴费金额
-                    console.log(data.data);
                 }).catch((err) => {
                     obj.$vux.loading.hide();
                     obj.$vux.toast.show({
@@ -723,7 +722,6 @@
                                             //数量归位
                                             obj.totalNum = 0;
                                         } else {
-                                            console.log(data.data);
                                             obj.$vux.toast.show({
                                                 type: 'warn',
                                                 text: data.data.msg

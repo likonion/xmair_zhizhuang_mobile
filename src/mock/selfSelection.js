@@ -3,7 +3,7 @@ import Mock from "mockjs"
 export default Mock.mock({
     "queryInit": {
         "allowDate": "@date-@date",
-        "allowFlag|2-3": 1,
+        "allowFlag": 1,
         "allowTitle": "2017",
         "allowYear": 23
     },
