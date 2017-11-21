@@ -36,7 +36,7 @@ export default Mock.mock({
                 "PHONE": "13459254816",
                 "CHANGE_ID": "402882235fbdad85015fbdb18f670007",
                 "STAFF_NAME": "系统测试",
-                "MAT_IMG": "../static/phone/1.png",
+                "MAT_IMG": "./static/phone/1.png",
                 "CHANGE_SIZE": "72",
                 "APP_CHANGE_DATE": "2017-11-15 11:20:51"
             },
@@ -77,7 +77,7 @@ export default Mock.mock({
                 "PHONE": "13459254816",
                 "CHANGE_ID": "402882235fbdad85015fbdb18f670007",
                 "STAFF_NAME": "系统测试",
-                "MAT_IMG": "../static/phone/1.png",
+                "MAT_IMG": "./static/phone/1.png",
                 "CHANGE_SIZE": "72",
                 "APP_CHANGE_DATE": "2017-11-15 11:20:51"
             },

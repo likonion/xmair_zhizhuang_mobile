@@ -17,8 +17,8 @@ export default Mock.mock({
                 "SEND_YEAR": "2017",
                 "EXPRESS_ID": "aaaaaaaaaaaaaaa1112323a",
                 "title|1": ["男行政春秋上衣", "领带", "男长袖衬衣", "连体雨衣", "男夏制衣", "男行政春秋制裤", "乘务裙（浅蓝）"],
-                "MAT_IMG": "../static/phone/1.png",
-                "src": "../static/phone/1.png"
+                "MAT_IMG": "./static/phone/1.png",
+                "src": "./static/phone/1.png"
 
             }
         ],
@@ -48,7 +48,7 @@ export default Mock.mock({
                 "title": null,
                 "AFTERSALE_STATE": "0",
                 "HANDLE_OPINION": null,
-                "src": "../static/phone/1.png",
+                "src": "./static/phone/1.png",
                 "APP_DATE": "2017-09-06 14:03:00"
 
             }
@@ -79,7 +79,7 @@ export default Mock.mock({
                 "title": null,
                 "AFTERSALE_STATE": "0",
                 "HANDLE_OPINION": null,
-                "src": "../static/phone/1.png",
+                "src": "./static/phone/1.png",
                 "APP_DATE": "2017-09-06 14:03:00"
 
             }

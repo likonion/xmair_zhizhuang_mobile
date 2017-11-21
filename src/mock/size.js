@@ -40,7 +40,7 @@ export default Mock.mock({
     },
     "newSelectMater|10": [{
         "PLAN_PRICE|10-100.1": 1,
-        "MAT_IMG": "../static/phone/1.png",
+        "MAT_IMG": "./static/phone/1.png",
         "MAT_SIZE": ["68",
             "70",
             "72",
