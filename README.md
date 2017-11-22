@@ -1,5 +1,6 @@
 # vux-demo
-
+# 界面截图
+![](./static/IMG_DED19AF17548-1.jpeg)
 > A Vue.js project
 
 ## Build Setup
